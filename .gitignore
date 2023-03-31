@@ -1,0 +1,12 @@
+# invisible files
+.*
+!.gitignore
+!.gitkeep
+
+# log files
+*.log
+
+# vim Emacs Backup files
+*~
+*.swp
+\#*\#
