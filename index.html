@@ -1,28 +1,497 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ページのタイトル</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">メニュー1</a></li>
-          <li><a href="#">メニュー2</a></li>
-          <li><a href="#">メニュー3</a></li>
-        </ul>
-      </nav>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syskey - 新しい価値を創りだせる会社でありたい</title>
+  <meta name="description" content="我々シスキーは、常に成長を続け、お客様、関係する人たちすべてを大切にし、Eコマースの世界でイノベーションを起せるよう日々精進を続けていきます。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="flex flex-col min-h-screen font-sans">
+    <!-- ヘッダー -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div class="mx-auto max-w-960 px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="https://syskey.jp">
+            <img src="images/syskey-logo.png" alt="SYSKEY - ECOMMERCE & INNOVATION" class="h-10 w-auto">
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-8" aria-label="メインナビゲーション">
+          <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
+          <a href="#service" class="text-gray-600 hover:text-primary transition-colors">Service</a>
+          <a href="#recruit" class="text-gray-600 hover:text-primary transition-colors">Recruit</a>
+          <a href="#news" class="text-gray-600 hover:text-primary transition-colors">News</a>
+          <a href="#access" class="text-gray-600 hover:text-primary transition-colors">Access</a>
+          <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-button" aria-label="メニューを開く" aria-expanded="false">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- モバイルメニュー -->
+      <div class="md:hidden absolute top-full left-0 right-0 bg-white shadow-md z-50 hidden" id="mobile-menu">
+        <nav class="flex flex-col py-4" aria-label="モバイルナビゲーション">
+          <a href="#about" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">About</a>
+          <a href="#service" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">Service</a>
+          <a href="#recruit" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">Recruit</a>
+          <a href="#news" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">News</a>
+          <a href="#access" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">Access</a>
+          <a href="#contact" class="px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">Contact</a>
+        </nav>
+      </div>
     </header>
+
     <main>
-      <h1>SYSKEY INC</h1>
-      <p>ここにコンテンツ</p>
-      <p>dev-team 削除テスト</p>
+      <!-- キービジュアル -->
+      <section class="relative h-500 bg-cover bg-center hero-bg" aria-labelledby="hero-heading">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative z-10 mx-auto max-w-960 px-4 h-full flex flex-col justify-center items-center text-center">
+          <h1 id="hero-heading" class="text-4xl md:text-5xl font-bold text-white mb-4">
+            新しい価値を
+            <br>
+            創りだせる会社でありたい
+          </h1>
+          <p class="text-white text-xl">ECOMMERCE & INNOVATION</p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-16 bg-white" aria-labelledby="about-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="about-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">About</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+
+          <article class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">企業理念</h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-xl font-bold text-center text-gray-800 mb-4">
+                新しい価値を創りだせる会社でありたい
+              </h4>
+              <p class="text-center text-lg font-bold text-gray-800 mb-6">ECOMMERCE & INNOVATION</p>
+              <div class="text-gray-600 leading-relaxed text-center">
+                <p class="mb-4">
+                  シスキーという社名は『システムキー』と『キーストーン』を掛け合わせた造語です。
+                  <br class="hidden md:inline">
+                  我々が提供するサービスがEコマースの分野においてキーストーンとなれるように、
+                  <br class="hidden md:inline">
+                  また社員一人一人が会社のキーストーンとなるよう高い意識と覚悟で業務に取り組む。
+                  <br class="hidden md:inline">
+                  そんな想いを込めた社名です。
+                </p>
+                <p>
+                  我々シスキーは、常に成長を続け、お客様、関係する人たちすべてを大切にし、
+                  <br class="hidden md:inline">
+                  Eコマースの世界でイノベーションを起せるよう日々精進を続けていきます。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">会社概要</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse" role="table">
+                <tbody>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      会社名
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">株式会社シスキー　SYSKEY Inc.</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      設立
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">平成12年4月7日</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      資本金
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">40,000,000円</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      決算月
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">2月</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      役員
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">
+                      <ul class="list-none space-y-1">
+                        <li>代表取締役社長　榊原 繁雄</li>
+                        <li>取締役　津久井 明</li>
+                        <li>取締役　吉瀬 真司</li>
+                        <li>取締役　飯村 幸一</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      従業員数
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">22人</td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      事業内容
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">
+                      <ul class="list-disc list-inside space-y-1">
+                        <li>ECサイト「イートレンド」の運営・管理業務</li>
+                        <li>家電製品の卸業務</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      所在地
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">
+                      <address class="not-italic">
+                        〒101-0041
+                        <br>
+                        東京都千代田区神田須田町1-34-3　D2SM 7F
+                      </address>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-gray-200">
+                    <th scope="row" class="py-4 px-6 text-left bg-gray-50 w-1/4 text-gray-700 whitespace-nowrap">
+                      主要取引先
+                    </th>
+                    <td class="py-4 px-6 text-gray-600">三菱東京UFJ銀行 神田駅前支店<br>三井住友銀行 上野支店</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">沿革</h3>
+            <dl class="space-y-6">
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2000年4月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">インターネットショップイートレンドを開設</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2000年5月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">東京（秋葉原）にて、店舗販売開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2004年11月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">オールリスク型延長保証サービス開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2005年7月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">家電製品、取扱い開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2007年4月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">全品送料無料開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2008年4月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">365日出荷サービス開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2012年12月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">ナイトバーゲン開始</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2014年7月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">価格コム安心支払いに対応</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2015年2月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">Amazonマーケットプレイス出店</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2015年5月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">楽天市場店リニューアルオープン</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2016年11月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">イートレンドＨＰリニューアル</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2017年12月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">Yahoo!Shopping出店</dd>
+              </div>
+              <div class="flex flex-col md:flex-row">
+                <dt class="w-full md:w-1/4 font-bold text-gray-700 mb-1 md:mb-0">2025年5月</dt>
+                <dd class="w-full md:w-3/4 text-gray-600">オフィス移転</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <!-- Service -->
+      <section id="service" class="py-16 bg-gray-50" aria-labelledby="service-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="service-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">Service</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+          <article class="flex flex-col items-center mb-10">
+            <div class="mb-6">
+              <img src="images/etrend-logo.png" alt="e-TREND イートレンドオンラインショップ" class="h-auto" width="300">
+            </div>
+            <p class="text-center text-gray-600 max-w-2xl mb-6">
+              PC、家電、カメラの通販特価販売でお馴染みのイートレンドオンラインショップ。2000年の創業以来、多くのお客様にご利用いただき、誠にありがとうございます。これからも皆様に喜んでいただけるように精進してまいります。
+            </p>
+            <a href="https://www.e-trend.co.jp/" target="_blank" rel="noopener noreferrer" class="flex items-center text-primary hover:text-primary-dark transition-colors font-medium">
+              公式サイトを見る 
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 w-4 h-4" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </article>
+          <figure class="bg-white p-6 rounded-lg">
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-md">
+              <img src="images/e-trend-img.jpeg" alt="e-TRENDウェブサイトのマルチデバイス表示 - ALL TIME SALE" class="w-full h-auto mx-auto">
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Recruit -->
+      <section id="recruit" class="py-16 bg-white" aria-labelledby="recruit-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="recruit-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">Recruit</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+          <article class="text-center mb-10">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              バイヤーアシスタント
+              <br>
+              （中途社員・契約社員・アルバイト）募集
+            </h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">株式会社シスキーでは一緒に働く仲間を募集しています！</p>
+          </article>
+
+          <article class="bg-white p-8 rounded-lg mb-10">
+            <h4 class="text-xl font-bold mb-6 text-gray-800 border-b pb-3 border-gray-200">募集要項</h4>
+
+            <dl class="space-y-6">
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">応募資格</dt>
+                <dd class="text-gray-600">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>学歴・国籍不問</li>
+                    <li>公共の交通機関にて通勤可能であること</li>
+                    <li>事務経験がなくてもPCの入力作業ができれば問題ありません。</li>
+                  </ul>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">業務内容</dt>
+                <dd class="text-gray-600">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>バイヤーアシスタント業務</li>
+                    <li>Web掲載の商品登録、電話や来客の応対、他</li>
+                  </ul>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">経験・スキル</dt>
+                <dd class="text-gray-600">Excel、Wordの基本操作ができればOKです！</dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">求める人物像</dt>
+                <dd class="text-gray-600">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>人と話すことが好きな方、問題解決能力をお持ちの方</li>
+                    <li>明るく前向きな性格の方、お待ちしています！</li>
+                  </ul>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">勤務時間</dt>
+                <dd class="text-gray-600">
+                  <time>10：30～19：00</time>（昼休み1時間）
+                  <br>
+                  ※1日4時間以上で相談に応じます。家事や子育てとの両立を求めている方、以前ご経験のある方で、
+                  <br>
+                  専業主婦(子育て)からの社会復帰をお考えの方も大歓迎です。
+                </dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">給与</dt>
+                <dd class="text-gray-600">
+                  時給 1,500円以上
+                  <br>
+                  能力に応じて柔軟に対応させて頂きます。
+                </dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">福利厚生</dt>
+                <dd class="text-gray-600">交通費全額支給</dd>
+              </div>
+
+              <div>
+                <dt class="font-bold text-gray-800 mb-2">休日・休暇</dt>
+                <dd class="text-gray-600">完全週休２日制（土・日）、祝日、年末年始休暇 (社員のみ)</dd>
+              </div>
+            </dl>
+          </article>
+
+          <div class="mt-10 text-center">
+            <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-md transition-colors inline-block">
+              応募・お問い合わせはこちら
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section id="news" class="py-16 bg-gray-50" aria-labelledby="news-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="news-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">News</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+          <div class="space-y-6">
+            <article class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex flex-wrap items-center gap-4 mb-2">
+                <time datetime="2025-06-01" class="text-gray-500">2025.06.01</time>
+                <span class="bg-primary-light text-primary px-3 py-1 rounded-full text-sm">お知らせ</span>
+              </div>
+              <h3 class="text-lg font-medium text-gray-800">ホームページをリニューアルしました</h3>
+            </article>
+            <article class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex flex-wrap items-center gap-4 mb-2">
+                <time datetime="2025-05-01" class="text-gray-500">2025.04.27</time>
+                <span class="bg-primary-light text-primary px-3 py-1 rounded-full text-sm">お知らせ</span>
+              </div>
+              <h3 class="text-lg font-medium text-gray-800">オフィスを移転しました</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Access -->
+      <section id="access" class="py-16 bg-white" aria-labelledby="access-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="access-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">Access</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <article>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">オフィス所在地</h3>
+              <div class="space-y-4 text-gray-600">
+                <div class="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <address class="not-italic">
+                    〒101-0041
+                    <br>
+                    東京都千代田区神田須田町1丁目34-3 D2SM 7F
+                  </address>
+                </div>
+              </div>
+              <div class="mt-6">
+                <h4 class="font-medium mb-2 text-gray-800">アクセス</h4>
+                <ul class="space-y-1 text-gray-600 list-none">
+                  <li>神田駅まで徒歩1分</li>
+                  <li>JR 神田駅まで徒歩3分</li>
+                  <li>東京メトロ丸ノ内線 淡路町駅まで徒歩5分</li>
+                  <li>都営新宿線 小川町駅まで徒歩5分</li>
+                  <li>東京メトロ千代田線 新御茶ノ水駅まで徒歩5分</li>
+                </ul>
+              </div>
+            </article>
+            <figure class="mx-auto w-full h-560 rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.3009902360973!2d139.7700783!3d35.69421010000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d004bf1ef1f%3A0xe62f2705c00d276c!2sD2SM!5e0!3m2!1sja!2sjp!4v1748757481810!5m2!1sja!2sjp"
+                width="100%"
+                height="100%"
+                style="border: 0;"
+                allowfullscreen="true"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="SYSKEY Office Location - D2SM Building">
+              </iframe>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16 bg-primary-light" aria-labelledby="contact-heading">
+        <div class="mx-auto max-w-960 px-4">
+          <h2 id="contact-heading" class="text-3xl font-bold text-center mb-12 relative">
+            <span class="relative z-10 mb-30 inline-block">Contact</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary" aria-hidden="true"></span>
+          </h2>
+          <article class="bg-white p-8 rounded-lg">
+            <p class="text-center text-gray-600 mb-8">
+              お問い合わせやご相談は、下記メールアドレスまでお気軽にご連絡ください。
+            </p>
+            <div class="text-center">
+              <a href="mailto:corporate@e-trend.co.jp" class="text-2xl font-medium text-gray-800 hover:text-primary transition-colors inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-primary mr-4" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                corporate@e-trend.co.jp
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
-    <footer>
-      <p>Copyright © 2023</p>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="mx-auto max-w-960 px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0 flex flex-col items-center md:items-start">
+            <img src="images/syskey_logo_white.png" alt="SYSKEY - ECOMMERCE & INNOVATION" class="h-10 w-auto">
+            <p class="text-gray-400 mt-2">新しい価値を創りだせる会社でありたい</p>
+          </div>
+          <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2" aria-label="フッターナビゲーション">
+            <a href="#about" class="text-gray-300 hover:text-primary transition-colors">About</a>
+            <a href="#service" class="text-gray-300 hover:text-primary transition-colors">Service</a>
+            <a href="#recruit" class="text-gray-300 hover:text-primary transition-colors">Recruit</a>
+            <a href="#news" class="text-gray-300 hover:text-primary transition-colors">News</a>
+            <a href="#access" class="text-gray-300 hover:text-primary transition-colors">Access</a>
+            <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+          </nav>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; <span id="current-year"></span> SYSKEY Inc.</p>
+        </div>
+      </div>
     </footer>
-  </body>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
